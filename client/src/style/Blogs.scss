@@ -1,0 +1,32 @@
+.blogWrapper {
+  border: 2px solid #000000;
+  .blog {
+    border-bottom: 2px solid #000000;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 30px;
+
+    .blog-btn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
+  .blogTitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .blogContent {
+    font-size: 15px;
+    text-align: justify;
+  }
+  .blogAuthor {
+    font-size: 15px;
+    text-align: right;
+  }
+}
