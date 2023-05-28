@@ -7,6 +7,7 @@ const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const blogsRouter = require('./routers/blogs.router');
 const { srcDir, rootDir} = require('./utils/path-helper')
+const cors = require('cors')
 
 
 
@@ -14,7 +15,8 @@ const { srcDir, rootDir} = require('./utils/path-helper')
 
 const app = express();
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride("_method"))
 
 app.get('/', (req, res) => {

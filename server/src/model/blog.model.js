@@ -4,10 +4,10 @@ const db = mongoConnect()
 
 
 module.exports = class Blog {
-    constructor(title, author, comments) {
+    constructor(title, author, content) {
       this.title = title;
       this.author = author;
-      this.comments = comments;
+      this.content = content;
     }
   
     async save() {
@@ -27,7 +27,7 @@ module.exports = class Blog {
          // what / filter
         { _id: new ObjectId(data.id) },
         // how / update
-        { $set: { title: data.title, author: data.author, comments: data.comments } }
+        { $set: { title: data.title, author: data.author, content: data.content } }
       )
     }
   

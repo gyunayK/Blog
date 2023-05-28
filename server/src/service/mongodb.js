@@ -19,16 +19,6 @@ const mongoConnect = async () => {
                     content: "Comment 1",
                 }
             ]},
-            { title: "Blog 1", content: "Content 1", author: "H.S Andersen", comments: [
-                {
-                    content: "Comment 1",
-                }
-            ]},
-            { title: "Blog 1", content: "Content 1", author: "H.S Andersen", comments: [
-                {
-                    content: "Comment 1",
-                }
-            ]},
         ]
         await dbObject.db(dbName).collection("blogs").insertMany(blogs);
     }
