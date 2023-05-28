@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function CreateBlog() {
   const navigate = useNavigate();
+  
   const submitBlog = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;

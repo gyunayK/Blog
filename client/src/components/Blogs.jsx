@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../style/Blogs.scss";
 
 function Blogs() {
@@ -18,23 +19,27 @@ function Blogs() {
       <h1>Blogs Page</h1>
 
       <div className="blogWrapper">
-        {blogs && blogs.map((blog, index) => {
-          return (
-            <div className="blog" key={index}>
-              <form action={`http://localhost:8000/blogs/delete/${blog._id}?_method=DELETE`} method="POST" >
-                <div className="blog-btn">
-                <a href={`http://localhost:8000/blogs/edit/${blog._id}`}>Edit</a>
-                <button type="submit">Delete</button>
-                </div>
-              </form>
-              <h2 className="blogTitle">{blog.title}</h2>
-              <p className="blogContent">{blog.content}</p>
-              <p className="blogAuthor">{blog.author}</p>
-            </div>
-          );
-        })
-        }
-        
+        {blogs &&
+          blogs.map((blog, index) => {
+            return (
+              <div className="blog" key={index}>
+                <form
+                  action={`http://localhost:8000/blogs/delete/${blog._id}?_method=DELETE`}
+                  method="POST"
+                >
+                  <div className="blog-btn">
+                    {/* <a href={`http://localhost:8000/blogs/edit/${blog._id}`}>Edit</a> */}
+                    <Link to={`/blogs/edit/${blog._id}`}>Edit</Link>
+
+                    <button type="submit">Delete</button>
+                  </div>
+                </form>
+                <h2 className="blogTitle">{blog.title}</h2>
+                <p className="blogContent">{blog.content}</p>
+                <p className="blogAuthor">{blog.author}</p>
+              </div>
+            );
+          })}
       </div>
     </div>
   );

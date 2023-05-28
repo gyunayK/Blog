@@ -15,8 +15,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blog/create" element={<CreateBlog />} />
-        <Route path="/blog/edit" element={<EditBlog />} />
+
+        <Route path="blogs/create" element={<CreateBlog />} />
+
+        <Route path="blogs/edit/:id" element={<EditBlog />} />
+
         <Route path="*" element={<h1>Not Found!</h1>} />
       </Routes>
     </>

@@ -46,9 +46,9 @@ exports.getAllBlogs = (req, res) => {
   
   exports.postEditBlogById = (req, res) => {
     const id = req.params.id;
-    const { title, author, comments } = req.body;
+    const { title, author, content } = req.body;
   
-    const dataToUpdate = { id, title, author, comments };
+    const dataToUpdate = { id, title, author, content };
   
     Blog.updateOne(dataToUpdate).then(() => {
       res.redirect("/blogs/all")
