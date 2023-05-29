@@ -1,32 +1,106 @@
 .blogWrapper {
-  border: 2px solid #000000;
+  border: 4px solid #f3f3f3;
   width: 100%;
+  height: 100%;
+  border-radius: 1rem;
   .blog {
-    border-bottom: 2px solid #000000;
+    border-top: 2px solid #ece9e9;
     position: relative;
-    margin: 0 auto;
+    background-color: #201f1f48;
+    margin: 20px;
+    border-radius: 1rem;
     padding: 30px;
+    height: max-content;
 
-    .blog-btn {
+    .blog-btn-wrapper {
       position: absolute;
+      display: flex;
       right: 20px;
       top: 20px;
-      button {
-        margin-left: 10px;
+      .blog-btn {
+        width: 100%;
+        height: max-content;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        background-color: #333;
+        color: #fff;
+        font-weight: normal;
+        font-size: 20px;
+        cursor: pointer;
       }
     }
   }
   .blogTitle {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 25px;
     text-align: center;
   }
   .blogContent {
-    font-size: 15px;
+    font-size: 20px;
     text-align: justify;
+    width: 100%;
+    word-wrap: break-word;
   }
   .blogAuthor {
-    font-size: 15px;
+    font-size: 17px;
     text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
   }
+}
+
+.title {
+  font-size: 45px;
+  text-align: center;
+  margin: 20px;
+  font-weight: 400;
+  background-color: #f3ec78;
+  background-color: #ffe53b;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(255, 179, 189, 1) 1.8%,
+    rgba(254, 248, 154, 1) 50.6%,
+    rgba(161, 224, 186, 1) 100.3%
+  );
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+
+  border-radius: 1rem;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.no-blogs{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+  text-align: center;
+  margin: 20px;
+  font-weight: 400;
+  background-color: #f3ec78;
+  background-color: #ffe53b;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(255, 179, 189, 1) 1.8%,
+    rgba(254, 248, 154, 1) 50.6%,
+    rgba(161, 224, 186, 1) 100.3%
+  );
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+
+  border-radius: 1rem;
+  width: max-content;
+  margin: 0 auto;
 }

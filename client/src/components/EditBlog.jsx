@@ -12,7 +12,6 @@ function EditBlog() {
     fetch(`http://localhost:8000/blogs/edit/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setBlog(data);
       });
   }, []);
@@ -72,7 +71,7 @@ function EditBlog() {
           onChange={handleContentChange}
         />
 
-        <button type="submit">Update</button>
+        <button type="submit" className="form-btn">Update</button>
       </form>
     </div>
   );

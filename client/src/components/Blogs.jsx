@@ -12,35 +12,41 @@ function Blogs() {
         setBlogs(data);
       });
   }, []);
-  console.log(blogs);
 
   return (
     <div>
-      <h1>Blogs Page</h1>
+      {/* <h1 className="title">Blogs Page</h1> */}
 
-      <div className="blogWrapper">
-        {blogs &&
-          blogs.map((blog, index) => {
-            return (
-              <div className="blog" key={index}>
+      {blogs.length !== 0 ? (
+        blogs.map((blog, index) => {
+          return (
+            <div className="blogWrapper" key={index}>
+              <div className="blog">
                 <form
                   action={`http://localhost:8000/blogs/delete/${blog._id}?_method=DELETE`}
                   method="POST"
                 >
-                  <div className="blog-btn">
+                  <div className="blog-btn-wrapper">
                     {/* <a href={`http://localhost:8000/blogs/edit/${blog._id}`}>Edit</a> */}
-                    <Link to={`/blogs/edit/${blog._id}`}>Edit</Link>
+                    <Link to={`/blogs/edit/${blog._id}`} className="blog-btn">
+                      Edit
+                    </Link>
 
-                    <button type="submit">Delete</button>
+                    <button type="submit" className="blog-btn">
+                      Delete
+                    </button>
                   </div>
                 </form>
                 <h2 className="blogTitle">{blog.title}</h2>
                 <p className="blogContent">{blog.content}</p>
-                <p className="blogAuthor">{blog.author}</p>
+                <i className="blogAuthor">{blog.author}</i>
               </div>
-            );
-          })}
-      </div>
+            </div>
+          );
+        })
+      ) : (
+        <h1 className="no-blogs">No Blogs!!</h1>
+      )}
     </div>
   );
 }

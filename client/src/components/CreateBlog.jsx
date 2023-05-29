@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function CreateBlog() {
   const navigate = useNavigate();
-  
+
   const submitBlog = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -39,7 +39,7 @@ function CreateBlog() {
         <input type="text" name="title" placeholder="Title" />
         <input type="text" name="author" placeholder="Author" />
         <textarea name="content" placeholder="Content" />
-        <button type="submit">Create</button>
+        <button type="submit" className="form-btn">Create</button>
       </form>
     </div>
   );
